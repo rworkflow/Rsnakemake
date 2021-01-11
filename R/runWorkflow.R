@@ -55,11 +55,11 @@ runFun <- function(idx, sobject, inputList,
 #'     output directory.
 #' @param BPPARAM The options for `BiocParallelParam`.
 #' @param ... More arguments for `snakemake_cmd`.
-#' @importFrom BiocParallel bplapply bptry
+#' @importFrom BiocParallel bplapply bptry MulticoreParam
 #' @export
 runWorkflowBatch <- function(sobject, inputList, batch_by,
                              outdir = NULL, workdir = NULL,
-                             BPPARAM = BatchtoolsParam(), ...){
+                             BPPARAM = MulticoreParam(), ...){
     batch_n <- inputList[[batch_by[1]]]
     bptry(bplapply(seq(batch_n), runFun, BPPARAM = BPPARAM,
                    sobject = sobject, inputList = inputList,

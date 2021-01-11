@@ -7,6 +7,7 @@
 #' @param ... More options for `snakemake`.
 #' @return logs.
 #' @importFrom reticulate py_module_available
+#' @importFrom basilisk basiliskStart basiliskRun basiliskStop
 #' @export
 snakemake <- function(snakefile,
                       workdir = NULL,
