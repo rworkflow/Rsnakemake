@@ -10,7 +10,7 @@ runWorkflowBatch(
   batch_by,
   outdir = NULL,
   workdir = NULL,
-  BPPARAM = BatchtoolsParam(),
+  BPPARAM = MulticoreParam(),
   ...
 )
 }
